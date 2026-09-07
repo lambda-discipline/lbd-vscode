@@ -1,0 +1,12 @@
+{
+    "iconDefinitions": {
+        "lbd": {
+            "iconPath": "./lambda.png"
+        }
+    },
+    "fileExtensions": {
+        "lbd": "lbd",
+        "lambda": "lbd",
+        "lambda-discipline": "lbd"
+    }
+}

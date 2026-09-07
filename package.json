@@ -1,0 +1,88 @@
+{
+    "name": "lambda-discipline",
+    "displayName": "Lambda Discipline",
+    "description": "Language support for Lambda Discipline",
+    "version": "0.2.0",
+    "publisher": "nos1dot618",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "main": "./extension.js",
+    "categories": [
+        "Programming Languages"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lambda-discipline/lbd-vscode.git"
+    },
+    "files": [
+        "extension.js",
+        "language-configuration.json",
+        "lbd-tm-grammar/tmLanguage.json",
+        "icons/**",
+        "README.md",
+        "LICENSE.txt"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "lbd",
+                "aliases": [
+                    "Lambda Discipline",
+                    "lbd"
+                ],
+                "extensions": [
+                    ".lbd",
+                    ".lambda",
+                    ".lambda-discipline"
+                ],
+                "configuration": "./language-configuration.json",
+                "icon": {
+                    "light": "./icons/lambda.png",
+                    "dark": "./icons/lambda.png"
+                }
+            }
+        ],
+        "grammars": [
+            {
+                "language": "lbd",
+                "scopeName": "source.lambda-discipline",
+                "path": "./lbd-tm-grammar/tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "lbd.runCurrentFile",
+                "title": "Run Lambda Discipline File",
+                "icon": "$(play)"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "lbd.runCurrentFile",
+                "key": "ctrl+f5",
+                "when": "editorLangId == lbd"
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "lbd.runCurrentFile",
+                    "when": "editorLangId == lbd",
+                    "group": "navigation@1"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "Lambda Discipline",
+            "properties": {}
+        }
+    },
+    "scripts": {
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@vscode/vsce": "^3.9.2"
+    }
+}

@@ -1,0 +1,3 @@
+[submodule "lbd-tm-grammar"]
+	path = lbd-tm-grammar
+	url = https://github.com/lambda-discipline/lbd-tm-grammar
